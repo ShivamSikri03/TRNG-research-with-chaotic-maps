@@ -22,4 +22,6 @@ env/
 # OS Artifacts
 .DS_Store
 Thumbs.db
-Desktop.ini
+# Temporary Scripts
+push_to_github.bat
+

@@ -1,0 +1,21 @@
+NIST SP 800-22 Rev 1a Statistical Test Results
+Input: clfsr_r_2m_bits.txt (Single R-Channel CLFSR, 8-bit mode) | Bits tested: 2,000,000
+Ones: 1,000,717 | Zeros: 999,283 | Ratio: 0.500359
+=================================================================
+  1.  Frequency (Monobit)                  0.310587     PASS
+  2.  Frequency Within Block               0.454256     PASS
+  3.  Runs                                 0.757302     PASS
+  4.  Longest Run of Ones                  0.882113     PASS
+  5.  Binary Matrix Rank                   0.238600     PASS
+  6.  Discrete Fourier Transform           0.008923     FAIL
+  7.  Non-Overlapping Template             0.108046     PASS
+  8.  Overlapping Template                 0.763828     PASS
+  9.  Maurer's Universal                   0.301099     PASS
+  10. Linear Complexity                    0.079188     PASS
+  11. Serial                               0.920108     PASS
+  12. Approximate Entropy                  0.829849     PASS
+  13. Cumulative Sums                      0.237537     PASS
+  14. Random Excursion                     0.234726     PASS
+  15. Random Excursion Variant             0.098228     PASS
+-----------------------------------------------------------------
+SUMMARY: 14/15 PASSED

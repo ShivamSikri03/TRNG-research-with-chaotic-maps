@@ -1,0 +1,21 @@
+NIST SP 800-22 Rev 1a Statistical Test Results
+Input: chaotic_r_1m_bits.txt | Bits tested: 1,000,000
+Ones: 480,978 | Zeros: 519,022 | Ratio: 0.480978
+=================================================================
+  1.  Frequency (Monobit)                  0.000000     FAIL
+  2.  Frequency Within Block               0.000000     FAIL
+  3.  Runs                                 0.000000     FAIL
+  4.  Longest Run of Ones                  0.000000     FAIL
+  5.  Binary Matrix Rank                   0.000000     FAIL
+  6.  Discrete Fourier Transform           0.000000     FAIL
+  7.  Non-Overlapping Template             0.000000     FAIL
+  8.  Overlapping Template                 0.000000     FAIL
+  9.  Maurer's Universal                   0.000000     FAIL
+  10. Linear Complexity                    0.000000     FAIL
+  11. Serial                               0.000000     FAIL
+  12. Approximate Entropy                  0.000000     FAIL
+  13. Cumulative Sums                      0.000000     FAIL
+  14. Random Excursion                     0.500000     PASS
+  15. Random Excursion Variant             0.500000     PASS
+-----------------------------------------------------------------
+SUMMARY: 2/15 PASSED

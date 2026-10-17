@@ -1,0 +1,23 @@
+NIST SP 800-90B Entropy Assessment & Health Test Results
+Input: chotic_xor_mux/putty.txt | Bits tested: 1,557,364
+Ones: 779,165 | Zeros: 778,199 | Ratio: 0.500310
+Overall assessed min-entropy: 0.497670 bits/symbol
+======================================================================
+Entropy Estimators:
+  - Most Common Value : H_min = 0.996132 bits/symbol
+  - Collision         : H_min = 0.497670 bits/symbol
+  - Markov            : H_min = 0.994497 bits/symbol
+----------------------------------------------------------------------
+Continuous Health Tests:
+  - Repetition Count Test (RCT):
+      Threshold (C)    : 21
+      Max observed     : 20
+      Failures         : 0
+      Status           : PASS
+  - Adaptive Proportion Test (APT):
+      Window Size (W)  : 512
+      Threshold (C)    : 311
+      Max observed     : 296
+      Failures         : 0
+      Status           : PASS
+======================================================================

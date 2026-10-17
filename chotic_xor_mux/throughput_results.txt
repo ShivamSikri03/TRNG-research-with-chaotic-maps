@@ -1,0 +1,52 @@
+================================================================================
+THROUGHPUT AND TIMING ANALYSIS REPORT
+Project: chaotic_xor_mux / chotic_xor_mux (4:1 MUX + Chaotic TRNG)
+Target Device: Xilinx Artix-7 (xc7a35tcpg236-1) - Digilent Basys 3
+Top-Level Module: top.v
+Vivado Project: D:/Projects/project_chaotic_xor_mux/project_chaotic_xor_mux.xpr
+================================================================================
+
+1. VIVADO IMPLEMENTATION TIMING METRICS
+--------------------------------------------------------------------------------
+Clock Net Name                 : sys_clk_pin
+Target Clock Period (T_clk)    : 10.000 ns
+Target Clock Frequency (f_clk) : 100.000 MHz
+Worst Negative Slack (WNS)     : +4.660 ns
+Total Negative Slack (TNS)     : 0.000 ns
+Worst Hold Slack (WHS)         : +0.122 ns
+Worst Pulse Width Slack (WPWS) : +4.500 ns
+Timing Status                  : All user-specified timing constraints MET
+
+2. ARCHITECTURE CONFIGURATION
+--------------------------------------------------------------------------------
+Entropy Source Bank            : 4 Ring Oscillators (RO_3, RO_5, RO_7, FIRO)
+Multiplexer                    : 4:1 MUX with D_FF feedback select
+Post-Processing                : Standalone 1-Bit Chaotic Real-Time XOR Hybrid
+Core Module                    : chaotic_trng_single (u_chaotic_core)
+Output Width per Cycle         : 1 bit per clock cycle (final_random_bit)
+Byte Strobe Rate               : 8 bits every 8 clock cycles (R_Out / key_ready)
+
+3. THROUGHPUT RESULTS
+--------------------------------------------------------------------------------
+A. Operating Throughput (Current 100 MHz On-Board Clock):
+   - Formula   : Bits_per_Cycle * f_clk
+   - Value     : 1 bit * 100.000 MHz
+   - Result    : 100.00 Mbps (12.50 MB/s)
+   *(Documented as 100 Mbps in PAPER_TABLES.tex / Table IV)*
+
+B. Maximum Theoretical Throughput (at f_max):
+   - Minimum Period (T_min)    : T_clk - WNS
+                               : 10.000 ns - 4.660 ns = 5.340 ns
+   - Maximum Frequency (f_max) : 1 / T_min
+                               : 1 / 5.340 ns = 187.266 MHz (~187.27 MHz)
+   - Maximum Throughput        : 1 bit * 187.266 MHz
+   - Result                    : 187.27 Mbps (23.41 MB/s)
+
+4. UART INTERFACE REFERENCE (PC Communication)
+--------------------------------------------------------------------------------
+Baud Rate                      : 115,200 Baud (8N1)
+Transmission Format            : ASCII '0' / '1' per sampled bit
+UART Real-Time Speed           : ~115.2 kbps (~11.52 KB/s)
+================================================================================
+Report generated on: 2026-10-08
+================================================================================

@@ -1,0 +1,76 @@
+=================================================================
+      ADVANCED TRNG VALIDATION & STATISTICAL METRICS REPORT
+=================================================================
+Input File: putty.txt
+Bits Evaluated: 2,000,000
+Generated Timestamp: 2026-09-24
+-----------------------------------------------------------------
+
+[1] BIAS TEST
+  Total Bits                  : 2000000
+  Ones (n1)                   : 999869
+  Zeros (n0)                  : 1000131
+  P(1)                        : 0.4999345
+  P(0)                        : 0.5000655
+  Bias (|P(1) - 0.5|)         : 6.549999999999612e-05
+  Verdict                     : PASS
+
+[2] DEVIATION TEST (Z-Score & Block Variance)
+  Z-score                     : -0.18526197667087543
+  P-value (Two-tailed)        : 0.8530235599591935
+  Block Size (M)              : 1024
+  Observed Block Std          : 0.015736811472841613
+  Theoretical Block Std       : 0.015625
+  Block Std Ratio (Obs/Exp)   : 1.0071559342618632
+  Max Cumulative Deviation    : 1130
+  Verdict                     : PASS
+
+[3] AUTOCORRELATION TEST (Lags 1-128)
+  Max Lag Tested              : 128
+  Max |ACF| Observed          : 0.002638588392711156
+  95% Confidence Bound        : 0.001385929291125633
+  99% Confidence Bound        : 0.0018215070683365465
+  Lags within 95% CI (%)      : 93.75
+  Outliers outside 99% CI     : 2
+  First 5 ACF values          : [0.0008315004157502079, -0.000747000747000747, 0.00219550329325494, 0.000264000528001056, -0.0005475013687534219]
+  Verdict                     : PASS
+
+[4] CHI-SQUARE (Chi^2) TEST (8-bit Words)
+  Total 8-bit Bytes           : 250000
+  Degrees of Freedom          : 255
+  Chi-Square Stat             : 289.201152
+  p-value                     : 0.06932948796495136
+  Shannon Entropy (bits/byte) : 7.99916435242516
+  Ideal Entropy               : 8.0
+  Entropy Deviation           : 0.0008356475748403369
+  Verdict                     : PASS
+
+[5] OUTPUT CORRELATION TEST (MIC)
+  Pairs Evaluated             : 9999
+  Mutual Information (bits)   : 0.015448945298303464
+  Normalized MI               : 0.003863361988377132
+  MIC (Maximal Info Coeff)    : 0.003863361988377132
+  Verdict                     : PASS
+
+[6] LINEAR COMPLEXITY ANALYSIS (Berlekamp-Massey)
+  Block Size (M)              : 500
+  Blocks Evaluated            : 80
+  Observed Mean LC            : 249.95
+  Theoretical Mean LC         : 250.16666666666666
+  Difference                  : -0.21666666666666856
+  Min LC                      : 241
+  Max LC                      : 253
+  Verdict                     : PASS
+
+[7] ROBUSTNESS TEST (Time-Series Stability)
+  Number of Chunks            : 10
+  Chunk Length (bits)         : 200000
+  Mean P(1)                   : 0.49993450000000006
+  Std Dev P(1) over time      : 0.0009501301226674244
+  Mean 1-bit Entropy          : 0.9999973828389432
+  Minimum 1-bit Entropy       : 0.9999895288219249
+  Std Dev Entropy over time   : 3.2682037169410987e-06
+  Verdict                     : PASS
+
+[+] Created binary dump for Dieharder: putty.bin
+=================================================================

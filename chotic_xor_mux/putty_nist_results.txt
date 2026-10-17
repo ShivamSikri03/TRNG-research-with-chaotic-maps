@@ -1,0 +1,21 @@
+NIST SP 800-22 Rev 1a Statistical Test Results
+Input: putty.txt | Bits tested: 1,557,364
+Ones: 779,165 | Zeros: 778,199 | Ratio: 0.500310
+=================================================================
+  1.  Frequency (Monobit)                  0.438887     PASS
+  2.  Frequency Within Block               0.482319     PASS
+  3.  Runs                                 0.716367     PASS
+  4.  Longest Run of Ones                  0.962661     PASS
+  5.  Binary Matrix Rank                   0.283639     PASS
+  6.  Discrete Fourier Transform           0.206212     PASS
+  7.  Non-Overlapping Template             0.636907     PASS
+  8.  Overlapping Template                 0.910316     PASS
+  9.  Maurer's Universal                   0.286740     PASS
+  10. Linear Complexity                    0.508612     PASS
+  11. Serial                               0.420642     PASS
+  12. Approximate Entropy                  0.669177     PASS
+  13. Cumulative Sums                      0.248005     PASS
+  14. Random Excursion                     0.148413     PASS
+  15. Random Excursion Variant             0.005393     FAIL
+-----------------------------------------------------------------
+SUMMARY: 14/15 PASSED

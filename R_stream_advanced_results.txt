@@ -1,0 +1,76 @@
+=================================================================
+      ADVANCED TRNG VALIDATION & STATISTICAL METRICS REPORT
+=================================================================
+Input File: R_stream.txt
+Bits Evaluated: 2,000,000
+Generated Timestamp: 2026-09-24
+-----------------------------------------------------------------
+
+[1] BIAS TEST
+  Total Bits                  : 2000000
+  Ones (n1)                   : 1000717
+  Zeros (n0)                  : 999283
+  P(1)                        : 0.5003585
+  P(0)                        : 0.49964149999999996
+  Bias (|P(1) - 0.5|)         : 0.00035850000000003934
+  Verdict                     : PASS
+
+[2] DEVIATION TEST (Z-Score & Block Variance)
+  Z-score                     : 1.0139911242215092
+  P-value (Two-tailed)        : 0.3105869875385725
+  Block Size (M)              : 1024
+  Observed Block Std          : 0.01578745306151032
+  Theoretical Block Std       : 0.015625
+  Block Std Ratio (Obs/Exp)   : 1.0103969959366605
+  Max Cumulative Deviation    : 1669
+  Verdict                     : PASS
+
+[3] AUTOCORRELATION TEST (Lags 1-128)
+  Max Lag Tested              : 128
+  Max |ACF| Observed          : 0.0020881211110244393
+  95% Confidence Bound        : 0.001385929291125633
+  99% Confidence Bound        : 0.0018215070683365465
+  Lags within 95% CI (%)      : 92.1875
+  Outliers outside 99% CI     : 2
+  First 5 ACF values          : [-0.00021750010875005437, -0.000607000607000607, -0.00047250070875106315, -0.000852001704003408, -2.7500068750171874e-05]
+  Verdict                     : PASS
+
+[4] CHI-SQUARE (Chi^2) TEST (8-bit Words)
+  Total 8-bit Bytes           : 250000
+  Degrees of Freedom          : 255
+  Chi-Square Stat             : 249.47200000000004
+  p-value                     : 0.5858941964622132
+  Shannon Entropy (bits/byte) : 7.999279678554859
+  Ideal Entropy               : 8.0
+  Entropy Deviation           : 0.0007203214451410034
+  Verdict                     : PASS
+
+[5] OUTPUT CORRELATION TEST (MIC)
+  Pairs Evaluated             : 9999
+  Mutual Information (bits)   : 0.017535754384987605
+  Normalized MI               : 0.004384577962926315
+  MIC (Maximal Info Coeff)    : 0.004384577962926315
+  Verdict                     : PASS
+
+[6] LINEAR COMPLEXITY ANALYSIS (Berlekamp-Massey)
+  Block Size (M)              : 500
+  Blocks Evaluated            : 80
+  Observed Mean LC            : 250.1125
+  Theoretical Mean LC         : 250.16666666666666
+  Difference                  : -0.054166666666645824
+  Min LC                      : 248
+  Max LC                      : 253
+  Verdict                     : PASS
+
+[7] ROBUSTNESS TEST (Time-Series Stability)
+  Number of Chunks            : 10
+  Chunk Length (bits)         : 200000
+  Mean P(1)                   : 0.5003584999999999
+  Std Dev P(1) over time      : 0.0010119759137449836
+  Mean 1-bit Entropy          : 0.9999966742420119
+  Minimum 1-bit Entropy       : 0.9999848686729718
+  Std Dev Entropy over time   : 4.328988454331109e-06
+  Verdict                     : PASS
+
+[+] Created binary dump for Dieharder: R_stream.bin
+=================================================================
